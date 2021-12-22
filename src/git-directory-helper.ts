@@ -113,7 +113,8 @@ export async function prepareExistingDirectory(
     // since it might be the current working directory.
     core.info(`Deleting the contents of '${repositoryPath}'`)
     for (const file of await fs.promises.readdir(repositoryPath)) {
-      await io.rmRF(path.join(repositoryPath, file))
+      core.info(`Checking path: ${path} [${file}]`)
+      // await io.rmRF(path.join(repositoryPath, file))
     }
   }
 }
